@@ -5,6 +5,8 @@ import GameCard from "./GameCard";
 
 const GameGrid = () => {
     const { games, error } = useGameHook()    
+    console.log(games);
+    
     return (
         <>
             {error && <Text>{ error}</Text>}
