@@ -1,24 +1,26 @@
-import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react"
+import {CardBody, HStack, Heading, Image } from "@chakra-ui/react"
 import { Game } from "../hooks/useGameHook"
 import PlatformIconList from "./PlatformIconList"
 import CriticScore from "./CriticScore"
 import getCroppedImage from "../services/imageurl"
+import GameCardContainer from "./GameCardContainer"
 
 interface Prop {
     game: Game
 }
 const GameCard = ({ game }: Prop) => {
     return (
-        <Card width={'300px'} border={10} overflow='hidden'>
+        <GameCardContainer>
+
             <Image src={getCroppedImage(game.background_image)} />
             <CardBody>
                 <Heading fontSize='2xl'>{game.name}</Heading>
                 <HStack justifyContent={'space-between'}>
-                <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
-                <CriticScore score={game.metacritic}/>
+                    <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
+                    <CriticScore score={game.metacritic} />
                 </HStack>
             </CardBody>
-        </Card>
+        </GameCardContainer>
     )
 }
 
