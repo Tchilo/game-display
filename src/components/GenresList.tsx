@@ -3,7 +3,7 @@ import useGenres, { Genres } from "../hooks/useGenres"
 import getCroppedImage from "../services/imageurl";
 
 interface Props {
-    onSelect: (data: Genres) => void
+    onSelect: (genre: Genres) => void
     selectedGenre: Genres|null
 }
 const GenresList = ({ onSelect,selectedGenre }: Props) => {
