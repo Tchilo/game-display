@@ -19,7 +19,8 @@ const useGameHook = (gameQuery: GameQuery) => useData<Game>('/games', {
     params: {
         genres: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
-        ordering:gameQuery.sortOrder
+        ordering: gameQuery.sortOrder,
+        seach:gameQuery.serchText
     }
 }, [gameQuery])
 
