@@ -17,7 +17,6 @@ export interface GameQuery {
 }
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
-console.log(gameQuery.serchText);
 
   return (
     <Grid templateAreas={{ base: `"nav""main"`, lg: `"nav nav""aside main"` }}
