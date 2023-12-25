@@ -7,14 +7,14 @@ interface Props {
     selectedGenre: Genres|null
 }
 const GenresList = ({ onSelect,selectedGenre }: Props) => {
-    const { isLoading, data, error } = useGenres()
+    const { data, error,isLoading } = useGenres()
     if (isLoading) return <Spinner />
     if (error) return null
     return (
         <>
             <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
             <List paddingY='5px'>
-                {data.map(gen => <ListItem marginY={2} key={gen.id}>
+                {data?.results.map(gen => <ListItem marginY={2} key={gen.id}>
                     <HStack>
                         <Image objectFit='cover' src={getCroppedImage(gen.image_background)} boxSize={'32px'} borderRadius={8} />
                         <Button whiteSpace='normal' textAlign='left' fontWeight={gen.id === selectedGenre?.id ? 'bold':''} variant='link' fontSize='15px'
