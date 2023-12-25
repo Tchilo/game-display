@@ -20,8 +20,8 @@ const useGameHook = (gameQuery: GameQuery) =>
         queryKey: ['games', gameQuery],
         queryFn: ({ pageParam = 1 }) => apiclient.getAll({
             params: {
-                genres: gameQuery.genre?.id,
-                parent_platforms: gameQuery.platform?.id,
+                genres: gameQuery.genreId,
+                parent_platforms: gameQuery.platformId,
                 ordering: gameQuery.sortOrder,
                 search: gameQuery.serchText,
                 page: pageParam
