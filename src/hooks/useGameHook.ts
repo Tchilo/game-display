@@ -1,5 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
-import useData from "./useData";
+import apiClient, { ApiResponse } from "../services/api-client";
 
 export interface Platform {
     id: number;
@@ -12,17 +13,23 @@ export interface Game {
     background_image: string;
     parent_platforms: { platform: Platform }[]
     metacritic: number
-    rating_top:number
+    rating_top: number
 }
 
 
-const useGameHook = (gameQuery: GameQuery) => useData<Game>('/games', {
-    params: {
-        genres: gameQuery.genre?.id,
-        platforms: gameQuery.platform?.id,
-        ordering: gameQuery.sortOrder,
-        search:gameQuery.serchText
-    }
-}, [gameQuery])
+const useGameHook = (gameQuery: GameQuery) =>
+    useQuery<ApiResponse<Game>, Error>({
+        queryKey: ['games', gameQuery],
+        queryFn: () => apiClient.get<ApiResponse<Game>>('/games', {
+            params: {
+                genres: gameQuery.genre?.id,
+                parent_platforms: gameQuery.platform?.id,
+                ordering: gameQuery.sortOrder,
+                search: gameQuery.serchText
+            }
+        })
+            .then(res => res.data),
+
+    })
 
 export default useGameHook
