@@ -5,13 +5,13 @@ import GenresList from "./components/GenresList"
 import { Genres } from "./hooks/useGenres"
 import { useState } from "react"
 import PlatformSelector from "./components/PlatformSelector"
-import { Platforms } from "./hooks/usePlatforms"
+import { Platform } from "./hooks/usePlatforms"
 import SortSelector from "./components/SortSelector"
 import GameHeading from "./components/GameHeading"
 
 export interface GameQuery {
   genre: Genres | null;
-  platform: Platforms | null
+  platform: Platform | null
   sortOrder: string
   serchText: string
 }
