@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios"
+import { config } from "process";
 
 export interface ApiResponse<T> {
   count: number;
@@ -23,6 +24,11 @@ class APIClient<T> {
   getAll = (config: AxiosRequestConfig) => {
     return apiClient.get<ApiResponse<T>>(this.endpoint, config)
       .then(res => res.data)
+  }
+
+  get = (id:string|number) => {
+    return apiClient.get<T>(this.endpoint +'/' + id)
+    .then(res => res.data)
   }
 }
 
