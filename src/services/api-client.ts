@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from "axios"
-import { config } from "process";
 
 export interface ApiResponse<T> {
   count: number;
