@@ -30,11 +30,6 @@ class APIClient<T> {
     .then(res => res.data)
   }
 
-  getMovie = (id:string|number) => {
-    return apiClient.get<ApiResponse<T>>(this.endpoint +'/' + id + '/' +'movies')
-    .then(res => res.data)
-  }
-
 }
 
 export default APIClient
