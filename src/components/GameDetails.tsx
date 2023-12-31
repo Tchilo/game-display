@@ -4,6 +4,7 @@ import useGame from "../hooks/useGame"
 import ExpanableText from "./ExpanableText"
 import GameAttributes from "./GameAttributes"
 import GameVideo from "./GameVideo"
+import GameScreenshots from "./GameScreenshots"
 
 const GameDetails = () => {
   const { slug } = useParams()
@@ -16,7 +17,8 @@ const GameDetails = () => {
       <Heading>{game.name}</Heading>
       <ExpanableText>{game.description_raw}</ExpanableText>
       <GameAttributes game={game} />
-      <GameVideo id={game.id}/>
+      <GameVideo id={game.id} />
+      <GameScreenshots id={game.id}/>
     </Box>
   )
 }

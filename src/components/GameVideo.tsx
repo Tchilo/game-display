@@ -6,7 +6,6 @@ interface Props {
 }
 const GameVideo = ({ id }: Props) => {
     const { data: trailer, isLoading, error } = useMovie(id)
-    console.log(trailer)
 
     if (isLoading) return <Spinner />
     if (error || !trailer) throw error
