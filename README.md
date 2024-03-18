@@ -1,27 +1,55 @@
-# React + TypeScript + Vite
+# Game Display
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> This project is a fully responsive website clone of the [rawg](https://rawg.io/) website. This project makes use of their API.
 
-Currently, two official plugins are available:
+## Built With
+- React
+- Typescript
+- zustand
+- chakra ui
+- tailwind css
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## See Live
+[Click here](https://game-display.netlify.app/)
 
-## Expanding the ESLint configuration
+## Screenshot
+<img height="500" src="./src/assets/gamedisplay.png">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+**To get this project set up on your local machine, follow these steps:**
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run  
 ```
+git clone git@github.com:Tchilo/game-display.git
+```
+4. Run
+  ```
+  cd game-display
+  ```
+5. Run 
+```
+npm install` or `npm i
+```
+6. Run 
+```
+npm run dev
+``` 
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Author:
+  
+ 👤 **Taro Chilongoshi**
+
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/tchilo)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/taro-chilongoshi/)
+ <a href="mailto:tchiloross@gmail.com?subject=Hey Taro?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
